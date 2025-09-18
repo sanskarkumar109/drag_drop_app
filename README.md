@@ -1,4 +1,4 @@
-🛠️ Network Topology Creater
+## 🛠️ Network Topology Creater
 
 A web-based application for designing and visualizing network topologies.  
 Built with a **Django backend** and a **Html,css and JavaScript frontend** using the **Konva.js** library, it allows users to create, connect, 
@@ -28,16 +28,23 @@ and group network devices, then export the topology as a structured **JSON file*
 ### 🔧 Installation
 
 Clone the repository:
+
 git clone https://github.com/sanskarkumar109/drag_drop_app.git
+
 cd drag_drop_app
+
 Install dependencies and run the Django backend:
 
 pip install Django
+
 python manage.py runserver
+
 The application will now be running at:
+
 👉 http://127.0.0.1:8000/
 
 📖 Usage
+
 Open the application in your web browser.
 
 Use the controls to add shapes (routers, switches) to the canvas.
@@ -53,6 +60,7 @@ Select multiple shapes → Create Group → assign properties.
 Click Generate JSON to view and export the topology data.
 
 🧰 Tools & Technologies
+
 Backend: Django (Python)
 
 Frontend: Html,css and JavaScript + Konva.js
@@ -60,6 +68,7 @@ Frontend: Html,css and JavaScript + Konva.js
 Export: JSON structured topology
 
 📌 Future Improvements
+
 User authentication & saved topologies
 
 Import JSON to reload topologies
@@ -69,4 +78,5 @@ Support for more device types & protocols
 Enhanced UI with drag/drop from device palette
 
 🤝 Contributing
+
 Contributions are welcome! Feel free to open issues and pull requests.
