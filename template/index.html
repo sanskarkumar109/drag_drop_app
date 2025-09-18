@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag&Drop App backup</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <div class="header-controls">
+        <div id="diagram-controls">
+            <label for="diagram-name">Diagram Name : </label>
+            <input type="text" id="diagram-name" placeholder="Enter Diagram Name">
+            <button id="erase-btn">Erase</button>
+            <button id="save-btn">Save Diagram</button>
+            <button id="load-btn">Load Diagram</button>
+            <select id="load-diagram-select" style="display: none;"></select>
+            <button id="delete-btn">Delete Diagram</button>
+            <button id="delete-selected-btn">Delete selected Shape</button>
+            <button id="duplicate-selected-btn">Duplicate selected Shape</button>
+            <button id="generate-script-btn">Generate Script</button>
+            <button id="assign-group-btn" disabled>Create Group and assign Propertiess</button>
+            <button id="add-pseudowire-btn">Add Pseudowire</button>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="shape-palette" class="palette">
+            <h2>Shapes Palette</h2>
+            <div class="draggable-shape" data-shape-type="rectangle">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <rect x="5" y="5" width="50" height="30" fill="#a7f3d0" stroke="#059669" stroke-width="2" rx="5"
+                        ry="5" />
+                </svg>
+                <span>Computer</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="circle">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <circle cx="30" cy="20" r="15" fill="#bae6fd" stroke="#0ea5e9" stroke-width="2" />
+                </svg>
+                <span>Router</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="triangle">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <polygon points="30,5 55,35 5,35" fill="#ffd700" stroke="#daa520" stroke-width="2" />
+                </svg>
+                <span>Switch</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="line-1g">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <line x1="5" y1="35" x2="55" y2="5" stroke="#fca5a5" stroke-width="2" />
+                </svg>
+                <span>1G Cable</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="line-10g">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <line x1="5" y1="35" x2="55" y2="5" stroke="#92b0f7" stroke-width="2" />
+                </svg>
+                <span>10G Cable</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="ellipse">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <ellipse cx="30" cy="20" rx="10" ry="15" fill="#ffc107" stroke="#e0a800" stroke-width="2" />
+                </svg>
+                <span>Lag</span>
+            </div>
+            <div class="draggable-shape" data-shape-type="diamond">
+                <svg width="60" height="40" viewBox="0 0 60 40">
+                    <polygon points="25,5 50,20 25,35 0,20"fill="#6a5acd" stroke="##483d8b" stroke-width="2" 
+                    />
+                </svg>
+                <span>CFM</span>
+            </div>
+        </div>
+
+        <div id="drawing-canvas" class="canvas">
+            <div id="konva-container"></div>
+        </div>
+    </div>
+
+    <div class="footer-controls">
+        <button id="export-png-btn">Export as PNG</button>
+        <button id="export-jpg-btn">Export as JPG</button>
+        <button id="export-pdf-btn">Export as PDF</button>
+    </div>
+</body>
+
+</html>
+
+<!-- External Libraries for Export Functionality -->
+<script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
+
